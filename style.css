@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+img {
+  width: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  height: 100vh;
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  overflow-y: hidden;
+}
+
+/* header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+
+header h1 {
+  font-family: 'Courier New';
+  font-size: 48px;
+}
+
+header nav ul {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  font-size: 18px;
+}
+
+header nav ul li {
+  cursor: pointer;
+} */
+
+.main-title {
+  font-size: 48px;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 5px;
+  width: 1200px;
+}
+
+.cardDiv {
+  position: relative;
+}
+
+.cardImage {
+  width: 125px;
+  height: 180px;
+  transition: 0.15s;
+}
+
+.cardImage:hover {
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.25);
+  z-index: 100;
+  cursor: pointer;
+}
+
+.cardImageSelected {
+  transform: scale(0.85);
+  opacity: 0.7;
+  filter: blur(1px);
+  border: 2px solid black;
+}
+
+.myCard,
+.enCard {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: 5px;
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  border-radius: 10px 10px 0 0;
+}
+
+.myCard {
+  background-color: green;
+}
+
+.enCard {
+  background-color: darkred;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.buttons button {
+  width: 175px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  white-space: nowrap;
+  border: none;
+  border-radius: 10px;
+  font-weight: 400;
+  cursor: pointer;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+  transition: 0.15s;
+  color: white;
+}
+
+.buttons button:hover {
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+  transform: translateY(5px);
+}
+
+.newGameBtn {
+  background: black; 
+}
+
+.myCardBtn {
+  background-color: green;
+}
+
+.enCardBtn {
+  background-color: red;
+}
+
+.dismissBtn {
+  background: darkblue; 
+}
+
+.status {
+  position: absolute;
+  text-align: center;
+  right: 20px;
+  width: 300px;
+  height: 125px;
+  border-radius: 10px;
+  background-color: white;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+  transition: 0.5s ease-in-out;
+}
+
+.status.error {
+  animation: errorShake 0.35s ease-in-out;
+}
+
+.status h2 {
+  color: red;
+  font-size: 18px;
+}
+
+.status p {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+@keyframes errorShake {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  body {
+    height: 100vh;
+  }
+
+  .container {
+    width: 1000px;
+  }
+
+  .cardImage {
+    width: 100px;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 1040px) {
+  .container {
+    width: 750px;
+  }
+
+  .cardImage {
+    width: 75px;
+    height: 110px;
+  }
+
+  .myCard,
+  .enCard {
+    font-size: 12px;
+  }
+
+  .buttons button {
+    width: auto;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 790px) {
+  body {
+    overflow: auto;
+    height: auto;
+  }
+
+  .status {
+    display: none;
+  }
+
+
+  .container {
+    width: 400px;
+  }
+
+  .cardImage {
+    
+  }
+
+  .buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .buttons button {
+    width: auto;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .container {
+    justify-content: center;
+    width: 300px;
+  }
+}
